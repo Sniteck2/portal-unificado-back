@@ -1,1 +1,1 @@
-web: java -jar target/usuario-causa-service-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT
+wweb: java $JAVA_OPTS -cp target/classes:target/m2e-wtp/*.jar com.foo.Main
