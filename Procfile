@@ -1,1 +1,1 @@
-web: java -jar target/usuario-causa-service-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT
+web: java -jar target/*.jar -Dserver.port=$PORT $JAVA_OPTS
