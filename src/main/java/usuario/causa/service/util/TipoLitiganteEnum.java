@@ -1,0 +1,24 @@
+package usuario.causa.service.util;
+
+public enum TipoLitiganteEnum {
+
+  ABOGADO_PATROCINANTE_DEL_DEMANDANDO(4L),
+  ABOGADO_PATROCINANTE_DEL_TERCERISTA(8L),
+  ABOGADO_PATROCINANTE(19L),
+  ABOGADO_PATROCINANTE_DEL_DEMANDANTE(25L),
+  ABOGADO_DEL_SOLICITANTE(34L),
+  ABOGADO_PATROCINANTE_DENUNCIADO(45L),
+  ABOGADO_PATROCINANTE_DENUNCIANTE(46L),
+  ABOGADO_PATROCINANTE_RECLAMADO(49L),
+  ABOGADO_PATROCINANTE_RECLAMANTE(50L);
+
+  private Long value;
+
+  TipoLitiganteEnum(Long value){
+    this.value = value;
+  }
+
+  public Long value(){
+    return this.value;
+  }
+}

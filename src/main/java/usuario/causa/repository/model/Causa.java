@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name = "TO_CAUSA")
@@ -31,6 +32,7 @@ public class Causa {
   private Long codFormaIngComp;
   private Competencia competencia;
   private char tipoCausa;
+  private String fechaModificacion;
 
   public Causa() {
   }
@@ -235,6 +237,15 @@ public class Causa {
     this.tipoCausa = tipoCausa;
   }
 
+  @Column(name = "FEC_MOD")
+  public String getFechaModificacion() {
+    return fechaModificacion;
+  }
+
+  public void setFechaModificacion(String fechaModificacion) {
+    this.fechaModificacion = fechaModificacion;
+  }
+
   @Override
   public String toString() {
     return "Causa{" +
@@ -250,13 +261,14 @@ public class Causa {
         ", crrFormaIniProc=" + crrFormaIniProc +
         ", fechaIngresoCausa=" + fechaIngresoCausa +
         ", fechaIngresoSistema=" + fechaIngresoSistema +
-        ", tribuna=" + tribunal +
+        ", tribunal=" + tribunal +
         ", codUbicacion=" + codUbicacion +
         ", flgReservado=" + flgReservado +
         ", codInfoCausaOjv=" + codInfoCausaOjv +
         ", codFormaIngComp=" + codFormaIngComp +
         ", competencia=" + competencia +
         ", tipoCausa=" + tipoCausa +
+        ", fechaModificacion=" + fechaModificacion +
         '}';
   }
 }

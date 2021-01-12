@@ -2,6 +2,7 @@ package usuario.causa.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class CausaVO implements Serializable {
 
@@ -25,6 +26,11 @@ public class CausaVO implements Serializable {
   private Long codFormaIngComp;
   private CompetenciaVO competenciaVO;
   private char tipoCausa;
+  private String fechaModificacion;
+  private List<Long> competencias;
+  private Long idUsuario;
+  private String fechaInicio;
+  private String fechaFinal;
 
   public Long getId() {
     return id;
@@ -178,6 +184,46 @@ public class CausaVO implements Serializable {
     this.tipoCausa = tipoCausa;
   }
 
+  public String getFechaModificacion() {
+    return fechaModificacion;
+  }
+
+  public void setFechaModificacion(String fechaModificacion) {
+    this.fechaModificacion = fechaModificacion;
+  }
+
+  public List<Long> getCompetencias() {
+    return competencias;
+  }
+
+  public void setCompetencias(List<Long> competencias) {
+    this.competencias = competencias;
+  }
+
+  public Long getIdUsuario() {
+    return idUsuario;
+  }
+
+  public void setIdUsuario(Long idUsuario) {
+    this.idUsuario = idUsuario;
+  }
+
+  public String getFechaInicio() {
+    return fechaInicio;
+  }
+
+  public void setFechaInicio(String fechaInicio) {
+    this.fechaInicio = fechaInicio;
+  }
+
+  public String getFechaFinal() {
+    return fechaFinal;
+  }
+
+  public void setFechaFinal(String fechaFinal) {
+    this.fechaFinal = fechaFinal;
+  }
+
   @Override
   public String toString() {
     return "CausaVO{" +
@@ -200,6 +246,11 @@ public class CausaVO implements Serializable {
         ", codFormaIngComp=" + codFormaIngComp +
         ", competenciaVO=" + competenciaVO +
         ", tipoCausa=" + tipoCausa +
+        ", fechaModificacion='" + fechaModificacion + '\'' +
+        ", competencias=" + competencias +
+        ", idUsuario=" + idUsuario +
+        ", fechaInicio='" + fechaInicio + '\'' +
+        ", fechaFinal='" + fechaFinal + '\'' +
         '}';
   }
 }

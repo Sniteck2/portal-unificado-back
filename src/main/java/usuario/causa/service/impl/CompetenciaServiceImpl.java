@@ -31,6 +31,7 @@ public class CompetenciaServiceImpl implements CompetenciaService {
         competenciaVO.setIdfLetra(comp.getIdfLetra());
         competenciaVO.setFlgActivo(comp.getFlgActivo());
         competenciaVO.setOrden(comp.getOrden());
+        competenciaVO.setNuevaGlosa(comp.getNuevaGlosa());
         competenciaVOS.add(competenciaVO);
       });
     }

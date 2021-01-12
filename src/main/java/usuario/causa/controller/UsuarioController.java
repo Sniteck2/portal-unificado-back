@@ -24,6 +24,11 @@ public class UsuarioController {
     this.usuarioService = usuarioService;
   }
 
+  @GetMapping(value = "/buscar-id/{id}")
+  public UsuarioVO buscarId(@PathVariable("id") Long id){
+    return this.usuarioService.buscarId(id);
+  }
+
   @PostMapping(value = "/guardar-usuario/", consumes = "application/json; charset=utf-8")
   public UsuarioVO guardarUsuario(@RequestBody UsuarioVO usuarioVO){
     return this.usuarioService.guardarUsuario(usuarioVO);
@@ -42,5 +47,10 @@ public class UsuarioController {
   @PostMapping(value = "/bloquear-usuario/", consumes = "application/json; charset=utf-8")
   public UsuarioVO bloquearUsuario(@RequestBody UsuarioVO usuarioVO){
     return this.usuarioService.usuarioBloqueado(usuarioVO);
+  }
+
+  @PostMapping(value = "/modificar-usuario/", consumes = "application/json; charset=utf-8")
+  public UsuarioVO modificarUsuario(@RequestBody UsuarioVO usuarioVO){
+    return this.usuarioService.modificarUsuario(usuarioVO);
   }
 }

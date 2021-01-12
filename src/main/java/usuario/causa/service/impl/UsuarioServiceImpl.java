@@ -23,6 +23,25 @@ public class UsuarioServiceImpl implements UsuarioService {
   }
 
   @Override
+  public UsuarioVO buscarId(Long id) {
+    Usuario usuario = this.usuarioDAO.buscarId(id);
+    UsuarioVO usuarioVO = new UsuarioVO();
+    usuarioVO.setId(usuario.getId());
+    usuarioVO.setPassword(usuario.getPassword());
+    usuarioVO.setCodUsuario(usuario.getCodUsuario());
+    usuarioVO.setRut(usuario.getRut());
+    usuarioVO.setDv(usuario.getDv());
+    usuarioVO.setNombre(usuario.getNombre());
+    usuarioVO.setAppPaterno(usuario.getAppPaterno());
+    usuarioVO.setAppMaterno(usuario.getAppMaterno());
+    usuarioVO.setCorreo(usuario.getCorreo());
+    usuarioVO.setSexo(usuario.getSexo());
+    usuarioVO.setFlgActivo(usuario.getFlgActivo());
+    usuarioVO.setFechaNacimiento(usuario.getFechaNacimiento());
+    return usuarioVO;
+  }
+
+  @Override
   @Transactional
   public UsuarioVO guardarUsuario(UsuarioVO usuarioVO) {
     logger.info("--guardar usuario: " + usuarioVO.toString());
@@ -98,6 +117,22 @@ public class UsuarioServiceImpl implements UsuarioService {
       usuarioVO.setFechaBloqueo(usuario.getFechaBloqueo());
     }else{
       usuarioVO.setCodUsuario(0L);
+    }
+    return usuarioVO;
+  }
+
+  @Override
+  @Transactional
+  public UsuarioVO modificarUsuario(UsuarioVO usuarioVO) {
+    Usuario usuario = this.usuarioDAO.buscarId(usuarioVO.getId());
+    if(usuarioVO.getFechaNacimiento() != null){
+      usuario.setFechaNacimiento(usuarioVO.getFechaNacimiento());
+    }
+    if(usuarioVO.getCorreo() != null){
+      usuario.setCorreo(usuarioVO.getCorreo());
+    }
+    if(usuarioVO.getPassword() != null){
+      usuario.setPassword(usuarioVO.getPassword());
     }
     return usuarioVO;
   }

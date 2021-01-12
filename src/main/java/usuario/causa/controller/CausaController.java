@@ -1,9 +1,12 @@
 package usuario.causa.controller;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +25,11 @@ public class CausaController {
     this.causaService = causaService;
   }
 
+  @GetMapping(value = "/buscar-id/{id}")
+  CausaVO buscarId(@PathVariable("id") Long id){
+    return this.causaService.buscarId(id);
+  }
+
   @GetMapping(value = "/buscar-causa/{rolCausa}/{eraCausa}/{tipoCausa}/{idTribunal}/{idCompetencia}")
   CausaVO buscarCausa(@PathVariable("rolCausa") Long rolCausa,
       @PathVariable("eraCausa") String eraCausa, @PathVariable("tipoCausa") char tipoCausa,
@@ -29,4 +37,17 @@ public class CausaController {
       @PathVariable("idCompetencia") Long idCompetencia){
     return this.causaService.buscarCausa(rolCausa, eraCausa, tipoCausa, idTribunal, idCompetencia);
   }
+
+  @GetMapping(value = "/buscar-causa-fecha/{idCompetencia}/{fechaInicio}/{fechaFinal}")
+  List<CausaVO> buscarCausaFecha(@PathVariable("idCompetencia") List<Long> idCompetencia,
+      @PathVariable("fechaInicio") String fechaInicio,
+      @PathVariable("fechaFinal") String fechaFinal){
+    return this.causaService.buscarCausaFecha(idCompetencia, fechaInicio, fechaFinal);
+  };
+
+  @PostMapping(value = "/buscar-causas-usuario-fecha/", consumes = "application/json; charset=utf-8")
+  List<CausaVO> buscarCausasPorParte(@RequestBody CausaVO causaVO){
+    return this.causaService.buscarCausasPorParte(causaVO);
+  }
+
 }

@@ -23,6 +23,11 @@ public class UsuarioDAOImpl implements UsuarioDAO {
   }
 
   @Override
+  public Usuario buscarId(Long id) {
+    return em.find(Usuario.class, id);
+  }
+
+  @Override
   @Transactional
   public Usuario guardarUsuario(Usuario usuario) {
     em.persist(usuario);

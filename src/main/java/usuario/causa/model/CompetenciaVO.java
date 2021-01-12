@@ -10,6 +10,7 @@ public class CompetenciaVO implements Serializable {
   private String idfLetra;
   private Long flgActivo;
   private Long orden;
+  private String nuevaGlosa;
 
   public Long getId() {
     return id;
@@ -51,6 +52,14 @@ public class CompetenciaVO implements Serializable {
     this.orden = orden;
   }
 
+  public String getNuevaGlosa() {
+    return nuevaGlosa;
+  }
+
+  public void setNuevaGlosa(String nuevaGlosa) {
+    this.nuevaGlosa = nuevaGlosa;
+  }
+
   @Override
   public String toString() {
     return "CompetenciaVO{" +
@@ -59,6 +68,7 @@ public class CompetenciaVO implements Serializable {
         ", idfLetra='" + idfLetra + '\'' +
         ", flgActivo=" + flgActivo +
         ", orden=" + orden +
+        ", nuevaGlosa='" + nuevaGlosa + '\'' +
         '}';
   }
 }

@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name = "TG_COMPETENCIA")
@@ -14,6 +15,7 @@ public class Competencia {
   private String idfLetra;
   private Long flgActivo;
   private Long orden;
+  private String nuevaGlosa;
 
 
   public Competencia() {
@@ -73,6 +75,15 @@ public class Competencia {
     this.orden = orden;
   }
 
+  @Column(name = "NUEVA_GLOSA")
+  public String getNuevaGlosa() {
+    return nuevaGlosa;
+  }
+
+  public void setNuevaGlosa(String nuevaGlosa) {
+    this.nuevaGlosa = nuevaGlosa;
+  }
+
   @Override
   public String toString() {
     return "Competencia{" +
@@ -81,6 +92,7 @@ public class Competencia {
         ", idfLetra='" + idfLetra + '\'' +
         ", flgActivo=" + flgActivo +
         ", orden=" + orden +
+        ", nuevaGlosa='" + nuevaGlosa + '\'' +
         '}';
   }
 }
