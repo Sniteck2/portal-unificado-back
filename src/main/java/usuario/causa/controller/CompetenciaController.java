@@ -1,6 +1,8 @@
 package usuario.causa.controller;
 
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import usuario.causa.service.CompetenciaService;
 @RequestMapping("competencia")
 public class CompetenciaController {
 
+  private static final Log logger = LogFactory.getLog(CompetenciaController.class);
   private final CompetenciaService competenciaService;
 
   @Autowired
@@ -24,6 +27,7 @@ public class CompetenciaController {
 
   @GetMapping(value = "/listar-competencia/")
   List<CompetenciaVO> listarCompetencia(){
+    logger.info("CONTROLLER LISTAR COMPETENCIA");
     return this.competenciaService.listarCompetencias();
   }
 }

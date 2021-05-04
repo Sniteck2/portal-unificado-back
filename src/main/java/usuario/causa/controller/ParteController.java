@@ -1,6 +1,8 @@
 package usuario.causa.controller;
 
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import usuario.causa.service.ParteService;
 @RequestMapping("parte")
 public class ParteController {
 
+  private static final Log logger = LogFactory.getLog(ParteController.class);
   private final ParteService parteService;
 
   @Autowired
@@ -25,6 +28,7 @@ public class ParteController {
 
   @GetMapping(value = "/buscar-partes/{idUsuario}/{idCompetencia}")
   List<ParteVO> buscarPartes(@PathVariable("idUsuario") Long idUsuario, @PathVariable("idCompetencia") List<Long> idCompetencia){
+    logger.info("CONTROLLER BUSCAR PARTES");
     return this.parteService.buscarPartes(idUsuario, idCompetencia);
   }
 

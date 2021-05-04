@@ -1,6 +1,8 @@
 package usuario.causa.controller;
 
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import usuario.causa.service.TipoCausaService;
 @RequestMapping("tipo-causa")
 public class TipoCausaController {
 
+  private static final Log logger = LogFactory.getLog(TipoCausaController.class);
   private final TipoCausaService tipoCausaService;
 
   @Autowired
@@ -24,6 +27,7 @@ public class TipoCausaController {
 
   @GetMapping(value = "/listar-tipo-causas")
   List<TipoCausaVO> listarTipoCausas(){
+    logger.info("CONTROLLER LISTAR TIPO CAUSAS");
     return this.tipoCausaService.listarTipoCausas();
   }
 

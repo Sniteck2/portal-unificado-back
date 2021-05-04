@@ -12,24 +12,25 @@ import javax.persistence.Table;
 @Table(name = "TO_USUARIO")
 public class Usuario {
 
-  Long id;
-  Long codUsuario;
-  String password;
-  Long rut;
-  String dv;
-  String nombre;
-  String appPaterno;
-  String appMaterno;
-  String correo;
-  Long flgActivo;
-  Date fechaCreacion;
-  Date fechaUltimoAcceso;
-  Long flgCambioPassword;
-  Date fechaCambioPassword;
-  Long numeroIntentos;
-  String sexo;
-  Date fechaNacimiento;
-  Date fechaBloqueo;
+  private Long id;
+  private Long codUsuario;
+  private String password;
+  private Long rut;
+  private String dv;
+  private String nombre;
+  private String appPaterno;
+  private String appMaterno;
+  private String correo;
+  private Long flgActivo;
+  private Date fechaCreacion;
+  private Date fechaUltimoAcceso;
+  private Long flgCambioPassword;
+  private Date fechaCambioPassword;
+  private Long numeroIntentos;
+  private String sexo;
+  private Long codTipoPerfil;
+  private Date fechaNacimiento;
+  private Date fechaBloqueo;
 
   public Usuario() {
   }
@@ -203,6 +204,15 @@ public class Usuario {
 
   public void setSexo(String sexo) {
     this.sexo = sexo;
+  }
+
+  @Column(name = "COD_TIPO_PERFIL")
+  public Long getCodTipoPerfil() {
+    return codTipoPerfil;
+  }
+
+  public void setCodTipoPerfil(Long codTipoPerfil) {
+    this.codTipoPerfil = codTipoPerfil;
   }
 
   @Column(name = "FEC_NACIMIENTO")

@@ -22,6 +22,7 @@ public class UsuarioVO implements Serializable {
   Date fechaCambioPassword;
   Long numeroIntentos;
   String sexo;
+  Long codTipoPerfil;
   Date fechaNacimiento;
   Date fechaBloqueo;
 
@@ -151,6 +152,14 @@ public class UsuarioVO implements Serializable {
 
   public void setSexo(String sexo) {
     this.sexo = sexo;
+  }
+
+  public Long getCodTipoPerfil() {
+    return codTipoPerfil;
+  }
+
+  public void setCodTipoPerfil(Long codTipoPerfil) {
+    this.codTipoPerfil = codTipoPerfil;
   }
 
   public Date getFechaNacimiento() {

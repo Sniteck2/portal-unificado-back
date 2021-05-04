@@ -1,6 +1,8 @@
 package usuario.causa.controller;
 
 import java.util.List;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,7 @@ import usuario.causa.service.TribunalCompetenciaService;
 @RequestMapping("tribunal-competencia")
 public class TribunalCompetenciaController {
 
+  private static final Log logger = LogFactory.getLog(TribunalCompetenciaController.class);
   private final TribunalCompetenciaService tribunalCompetenciaService;
 
   @Autowired
@@ -26,6 +29,7 @@ public class TribunalCompetenciaController {
 
   @GetMapping(value = "/tribunal-por-competencia/{idCompetencia}")
   List<TribunalVO> listarTribunalPorCompetencia(@PathVariable("idCompetencia") Long idCompetencia){
+    logger.info("CONTROLLER LISTAR TRIBUNAL POR COMPETENCIA");
     return this.tribunalCompetenciaService.listarTribunalPorCompetencia(idCompetencia);
   }
 }

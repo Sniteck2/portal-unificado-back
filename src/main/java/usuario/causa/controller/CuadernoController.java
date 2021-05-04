@@ -1,5 +1,7 @@
 package usuario.causa.controller;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +17,7 @@ import usuario.causa.service.CuadernoService;
 @RequestMapping("cuaderno")
 public class CuadernoController {
 
+  private static final Log logger = LogFactory.getLog(CuadernoController.class);
   private final CuadernoService cuadernoService;
 
   @Autowired
@@ -24,6 +27,7 @@ public class CuadernoController {
 
   @GetMapping(value = "/buscar-id/{id}")
   CuadernoVO buscarId(@PathVariable("id") Long id){
+    logger.info("CONTROLLER BUSCAR ID CUADERNO");
     return this.cuadernoService.buscarId(id);
   }
 

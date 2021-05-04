@@ -37,6 +37,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     usuarioVO.setCorreo(usuario.getCorreo());
     usuarioVO.setSexo(usuario.getSexo());
     usuarioVO.setFlgActivo(usuario.getFlgActivo());
+    usuarioVO.setCodTipoPerfil(usuario.getCodTipoPerfil());
     usuarioVO.setFechaNacimiento(usuario.getFechaNacimiento());
     return usuarioVO;
   }
@@ -71,6 +72,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     usuarioVO.setCorreo(usuario.getCorreo());
     usuarioVO.setSexo(usuario.getSexo());
     usuarioVO.setFlgActivo(usuario.getFlgActivo());
+    usuarioVO.setCodTipoPerfil(usuario.getCodTipoPerfil());
     usuarioVO.setFechaNacimiento(usuario.getFechaNacimiento());
     return usuarioVO;
   }
@@ -91,6 +93,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     usuario.setFechaCreacion(new Date());
     usuario.setFechaUltimoAcceso(new Date());
     usuario.setSexo(usuarioVO.getSexo());
+    usuario.setCodTipoPerfil(usuarioVO.getCodTipoPerfil());
     usuario.setFechaNacimiento(usuarioVO.getFechaNacimiento());
     usuario = this.usuarioDAO.guardarUsuario(usuario);
     return usuarioVO;
