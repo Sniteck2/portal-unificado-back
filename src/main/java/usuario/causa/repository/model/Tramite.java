@@ -18,6 +18,7 @@ public class Tramite {
   private Long etapa;
   private String referencia;
   private Long estadoFirma;
+  private Long idCuaderno;
 
   public Tramite() {
   }
@@ -93,6 +94,15 @@ public class Tramite {
 
   public void setEstadoFirma(Long estadoFirma) {
     this.estadoFirma = estadoFirma;
+  }
+
+  @Column(name = "CRR_CUADERNO")
+  public Long getIdCuaderno() {
+    return idCuaderno;
+  }
+
+  public void setIdCuaderno(Long idCuaderno) {
+    this.idCuaderno = idCuaderno;
   }
 
   @Override

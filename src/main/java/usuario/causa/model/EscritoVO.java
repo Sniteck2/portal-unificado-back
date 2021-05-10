@@ -3,16 +3,15 @@ package usuario.causa.model;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TramiteVO implements Serializable {
+public class EscritoVO implements Serializable {
 
-  private static final long serialVersionUID = 7446622982158540484L;
+  private static final long serialVersionUID = -7162265386413076246L;
   private Long id;
   private Long idDocumento;
-  private Date fecha;
-  private String tipoTramite;
-  private String etapa;
+  private Long numeroFolio;
+  private Date fechaPresentacion;
+  private TipoEscritoVO tipoEscritoVO;
   private String referencia;
-  private String estadoFirma;
   private Long idCuaderno;
 
   public Long getId() {
@@ -31,28 +30,28 @@ public class TramiteVO implements Serializable {
     this.idDocumento = idDocumento;
   }
 
-  public Date getFecha() {
-    return fecha;
+  public Long getNumeroFolio() {
+    return numeroFolio;
   }
 
-  public void setFecha(Date fecha) {
-    this.fecha = fecha;
+  public void setNumeroFolio(Long numeroFolio) {
+    this.numeroFolio = numeroFolio;
   }
 
-  public String getTipoTramite() {
-    return tipoTramite;
+  public Date getFechaPresentacion() {
+    return fechaPresentacion;
   }
 
-  public void setTipoTramite(String tipoTramite) {
-    this.tipoTramite = tipoTramite;
+  public void setFechaPresentacion(Date fechaPresentacion) {
+    this.fechaPresentacion = fechaPresentacion;
   }
 
-  public String getEtapa() {
-    return etapa;
+  public TipoEscritoVO getTipoEscritoVO() {
+    return tipoEscritoVO;
   }
 
-  public void setEtapa(String etapa) {
-    this.etapa = etapa;
+  public void setTipoEscritoVO(TipoEscritoVO tipoEscritoVO) {
+    this.tipoEscritoVO = tipoEscritoVO;
   }
 
   public String getReferencia() {
@@ -61,14 +60,6 @@ public class TramiteVO implements Serializable {
 
   public void setReferencia(String referencia) {
     this.referencia = referencia;
-  }
-
-  public String getEstadoFirma() {
-    return estadoFirma;
-  }
-
-  public void setEstadoFirma(String estadoFirma) {
-    this.estadoFirma = estadoFirma;
   }
 
   public Long getIdCuaderno() {
@@ -81,14 +72,13 @@ public class TramiteVO implements Serializable {
 
   @Override
   public String toString() {
-    return "TramiteVO{" +
+    return "EscritoVO{" +
         "id=" + id +
         ", idDocumento=" + idDocumento +
-        ", fecha=" + fecha +
-        ", tipoTramite='" + tipoTramite + '\'' +
-        ", etapa='" + etapa + '\'' +
+        ", numeroFolio=" + numeroFolio +
+        ", fechaPresentacion=" + fechaPresentacion +
+        ", tipoEscritoVO=" + tipoEscritoVO +
         ", referencia='" + referencia + '\'' +
-        ", estadoFirma='" + estadoFirma + '\'' +
         ", idCuaderno=" + idCuaderno +
         '}';
   }

@@ -32,6 +32,7 @@ public class TramiteVOBuilder {
     tramiteVO.setReferencia(tramite.getReferencia());
     tramiteVO.setEstadoFirma(Objects.requireNonNull(EstadoFirmaEnum.findByValue(
         tramite.getEstadoFirma())).toString());
+    tramiteVO.setIdCuaderno(tramite.getIdCuaderno());
     return tramiteVO;
   }
 
