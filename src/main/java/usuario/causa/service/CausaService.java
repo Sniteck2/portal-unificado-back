@@ -7,7 +7,7 @@ public interface CausaService {
 
   CausaVO buscarId(Long id);
 
-  CausaVO buscarCausa(Long rolCausa, String eraCausa, char tipoCausa, Long idTribunal, Long idCompetencia);
+  CausaVO buscarCausa(Long rolCausa, String eraCausa, String tipoCausa, Long idTribunal, Long idCompetencia);
 
   List<CausaVO> buscarCausaFecha(List<Long> competencias, String fechaInicio, String fechaFinal);
 

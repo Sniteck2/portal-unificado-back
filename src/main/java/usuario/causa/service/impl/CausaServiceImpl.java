@@ -65,7 +65,7 @@ public class CausaServiceImpl implements CausaService {
   }
 
   @Override
-  public CausaVO buscarCausa(Long rolCausa, String eraCausa, char tipoCausa, Long idTribunal, Long idCompetencia) {
+  public CausaVO buscarCausa(Long rolCausa, String eraCausa, String tipoCausa, Long idTribunal, Long idCompetencia) {
     Causa causa = new Causa();
     CausaVO causaVO = new CausaVO();
     TribunalVO tribunalVO = new TribunalVO();

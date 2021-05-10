@@ -11,10 +11,10 @@ public class CausaVO implements Serializable {
   private Long rolCausa;
   private String eraCausa;
   private String glosaParte;
-  private char rucEra;
-  private char rutTipTrbiunal;
+  private String rucEra;
+  private String rutTipTrbiunal;
   private Long rucSecuencia;
-  private char rucDv;
+  private String rucDv;
   private String codUsuario;
   private Long crrFormaIniProc;
   private Date fechaIngresoCausa;
@@ -25,7 +25,7 @@ public class CausaVO implements Serializable {
   private Long codInfoCausaOjv;
   private Long codFormaIngComp;
   private CompetenciaVO competenciaVO;
-  private char tipoCausa;
+  private String tipoCausa;
   private String fechaModificacion;
   private List<Long> competencias;
   private Long idUsuario;
@@ -64,19 +64,19 @@ public class CausaVO implements Serializable {
     this.glosaParte = glosaParte;
   }
 
-  public char getRucEra() {
+  public String getRucEra() {
     return rucEra;
   }
 
-  public void setRucEra(char rucEra) {
+  public void setRucEra(String rucEra) {
     this.rucEra = rucEra;
   }
 
-  public char getRutTipTrbiunal() {
+  public String getRutTipTrbiunal() {
     return rutTipTrbiunal;
   }
 
-  public void setRutTipTrbiunal(char rutTipTrbiunal) {
+  public void setRutTipTrbiunal(String rutTipTrbiunal) {
     this.rutTipTrbiunal = rutTipTrbiunal;
   }
 
@@ -88,11 +88,11 @@ public class CausaVO implements Serializable {
     this.rucSecuencia = rucSecuencia;
   }
 
-  public char getRucDv() {
+  public String getRucDv() {
     return rucDv;
   }
 
-  public void setRucDv(char rucDv) {
+  public void setRucDv(String rucDv) {
     this.rucDv = rucDv;
   }
 
@@ -176,11 +176,11 @@ public class CausaVO implements Serializable {
     this.competenciaVO = competenciaVO;
   }
 
-  public char getTipoCausa() {
+  public String getTipoCausa() {
     return tipoCausa;
   }
 
-  public void setTipoCausa(char tipoCausa) {
+  public void setTipoCausa(String tipoCausa) {
     this.tipoCausa = tipoCausa;
   }
 

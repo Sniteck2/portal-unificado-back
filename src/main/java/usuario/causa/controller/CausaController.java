@@ -36,7 +36,7 @@ public class CausaController {
 
   @GetMapping(value = "/buscar-causa/{rolCausa}/{eraCausa}/{tipoCausa}/{idTribunal}/{idCompetencia}")
   CausaVO buscarCausa(@PathVariable("rolCausa") Long rolCausa,
-      @PathVariable("eraCausa") String eraCausa, @PathVariable("tipoCausa") char tipoCausa,
+      @PathVariable("eraCausa") String eraCausa, @PathVariable("tipoCausa") String tipoCausa,
       @PathVariable("idTribunal") Long idTribunal,
       @PathVariable("idCompetencia") Long idCompetencia){
     logger.info("CONTROLLER BUSCAR CAUSA");

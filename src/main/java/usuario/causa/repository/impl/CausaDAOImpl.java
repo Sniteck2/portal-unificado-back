@@ -31,7 +31,7 @@ public class CausaDAOImpl implements CausaDAO {
   }
 
   @Override
-  public Causa buscarCausa(Long rolCausa, String eraCausa, char tipoCausa, Long idTribunal,
+  public Causa buscarCausa(Long rolCausa, String eraCausa, String tipoCausa, Long idTribunal,
       Long idCompetencia) {
     Causa causa = new Causa();
     try {
@@ -62,7 +62,7 @@ public class CausaDAOImpl implements CausaDAO {
   public List<Causa> buscarCausaFecha(List<Long> competencias, String fechaInicio, String fechaFinal) {
     StringBuilder str = new StringBuilder();
     str.append("FROM Causa c WHERE c.fechaModificacion BETWEEN :fechaInicio AND :fechaFinal");
-    if(competencias != null && competencias.size() > 0){
+    if(competencias != null && !competencias.isEmpty()){
         str.append(" AND c.competencia IN (");
         StringBuilder finalStrBuilder = str;
         competencias.forEach(item -> finalStrBuilder.append(item + ","));
